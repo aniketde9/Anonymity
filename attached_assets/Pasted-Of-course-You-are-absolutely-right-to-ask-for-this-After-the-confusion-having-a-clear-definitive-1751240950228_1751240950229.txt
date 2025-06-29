@@ -1,0 +1,125 @@
+Of course. You are absolutely right to ask for this. After the confusion, having a clear, definitive Product Requirements Document (PRD) is the most important step forward. This document will serve as our blueprint and ensure we are perfectly aligned on the application you want to build.
+
+I have completely discarded all previous concepts related to the "hops" model. This PRD is for Anonymity V2, a true privacy pool that uses the modern architecture we discussed.
+
+Product Requirements Document (PRD): Anonymity V2 - The Privacy Pool
+
+1. Vision & Mission
+
+Vision: To provide Solana users with a simple, secure, and trustless application for achieving strong on-chain transactional privacy.
+
+Mission: We are building "Anonymity V2," a decentralized privacy pool on the Solana network. By leveraging a non-custodial smart contract and the Token-2022 standard for Confidential Transfers, our application will allow users to deposit funds and withdraw them to a new address, effectively breaking the on-chain link between the source and destination of funds by obscuring both the path and the transacted amount.
+
+2. The Problem We Are Solving
+
+Standard blockchain transactions are fully transparent, creating a permanent, public record of activity. This "public-by-default" nature exposes users to analysis, tracking, and potential risks if their main wallet address is known. The previous "hops" model (V1) was a basic obfuscation step but was still vulnerable to timing and value-correlation analysis. A more robust solution is needed.
+
+Our users require a method to fund new wallets or transact privately without linking these activities back to their primary on-chain identity. Existing solutions are often centralized (requiring trust in a third party), complex, or do not leverage the latest privacy-enhancing technologies available on Solana.
+
+3. Target Audience & User Persona
+
+Persona: "Priya, the Privacy-Conscious DeFi User"
+
+Bio: An active participant in the Solana ecosystem. She holds a significant portion of her assets in a main wallet but wants to interact with new protocols, airdrops, and DAOs using fresh, unlinked wallets.
+
+Needs & Goals:
+
+To fund a new wallet for a specific purpose without revealing the funding source (her main wallet).
+
+To maintain a separation between her public on-chain identity and her private financial activities.
+
+To use a simple, non-custodial tool where she is always in control of her funds.
+
+Pain Points: She fears that using a simple A -> B transfer will make it trivial for anyone to connect her new activities back to her entire transaction history, undermining her privacy and potentially making her a target.
+
+4. Core Features & User Flow
+
+The application logic is separated into two distinct phases: Deposit and Withdraw. The "hops" model is completely removed.
+
+F1: The Dashboard & Anonymity Set
+
+Description: The user connects their wallet to a clean dashboard that provides trust-building information about the pool.
+
+Requirements:
+
+The UI must display key statistics fetched directly from the on-chain program:
+
+Total Value Pooled (TVL): The total amount of funds currently held in the mixer contract.
+
+Anonymity Set Size: The number of active deposits currently in the pool. This is the most important metric for communicating the strength of the privacy guarantee.
+
+The primary navigation will consist of two clear modes: "Deposit" and "Withdraw."
+
+F2: The Deposit Flow
+
+Description: The user adds funds to the common privacy pool.
+
+Requirements:
+
+Fixed Deposit Amounts: To break value-correlation, users must select from a predefined set of deposit sizes (e.g., 1 SOL, 10 SOL, 100 SOL). The UI will not allow arbitrary amounts.
+
+Secret Note Generation: When the user initiates a deposit, the frontend will locally generate a cryptographically secure secret (a "secret note"). This note never leaves the user's browser.
+
+Hashed Commitment: The frontend will hash this secret note to create a "leaf." This leaf is what will be sent to the smart contract.
+
+Critical User Interaction (The Note):
+
+The UI must display the full secret note to the user in a clear, copyable format.
+
+A mandatory checkbox or button, "I have backed up my secret note," must be clicked before proceeding.
+
+A prominent, unmissable warning must state: "If you lose this note, your funds are gone forever. We have no way to recover it for you."
+
+Transaction Approval: The user signs a single transaction that calls the deposit function on the smart contract, sending their funds and the hashed leaf to the pool.
+
+F3: The Withdrawal Flow
+
+Description: At a later time, the user returns to withdraw their funds to a new, unlinked wallet.
+
+Requirements:
+
+The user navigates to the "Withdraw" tab.
+
+Secret Note Input: A text area where the user must paste the secret note they saved during the deposit phase.
+
+New Recipient Address: An input field for the destination address.
+
+Critical User Warning: The UI must display a strong recommendation: "For maximum privacy, withdraw to a new wallet address that has no prior transaction history."
+
+Withdrawal Transaction:
+
+The frontend hashes the provided secret note to re-generate the leaf.
+
+The user signs a transaction that calls the withdraw function, providing the leaf and the new recipient address.
+
+The on-chain program validates the leaf against its list of deposits, transfers the funds from the pool to the recipient, and nullifies the original deposit to prevent double-spending.
+
+F4: Confidential Transfers (Token-2022 Integration)
+
+Description: This is the core privacy-enhancing technology that hides the transaction amounts.
+
+Underlying Logic (abstracted from the user):
+
+The entire Anonymity Pool will operate on a specific Token-2022 asset (e.g., "pSOL") with the Confidential Transfer extension enabled.
+
+On Deposit: The app will transparently perform a "wrap" action, converting the user's 1 SOL into 1 pSOL before depositing it. The deposit of pSOL into the pool is the transaction where the amount is encrypted.
+
+On Withdrawal: The app will withdraw pSOL to the new wallet and then provide a simple "unwrap" button to convert the pSOL back into standard SOL.
+
+User Experience: The user should not need to understand the complexities of wrapping/unwrapping. The UI should simply state that it is using confidential transfers to protect the transaction amount.
+
+5. Non-Functional Requirements
+
+Security: The system must be non-custodial; the smart contract holds the funds, but only the user with the corresponding secret note can authorize a withdrawal. The contract must be professionally audited before any mainnet deployment.
+
+Decentralization: All core logic for depositing and withdrawing funds resides in the on-chain Solana program, not a centralized server. This removes the single point of failure and the need to trust an intermediary.
+
+Usability: The UI must be exceptionally clear, especially regarding the critical importance of the secret note. The process should feel simple despite the underlying cryptographic complexity.
+
+6. Future Scope (V2.1 and Beyond)
+
+Support for additional fixed deposit amounts and other SPL tokens (e.g., pUSDC).
+
+Implementation of a decentralized Relayer network to pay the gas fees for withdrawal transactions, further enhancing privacy by not requiring the new wallet to be funded beforehand.
+
+Optional, user-configurable time delays for withdrawals to break timing correlation completely.
