@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { Connection, PublicKey, Transaction, SystemProgram } from '@solana/web3.js';
 import { LAMPORTS_PER_SOL } from '@solana/web3.js';
+import { Program, AnchorProvider, Wallet, BN } from '@coral-xyz/anchor';
+import { getAssociatedTokenAddress, TOKEN_2022_PROGRAM_ID } from '@solana/spl-token';
 
 const HELIUS_RPC = 'https://devnet.helius-rpc.com/?api-key=a1c96ec7-818b-4789-ad2c-2bd175df4a95';
 
@@ -57,16 +59,18 @@ const DepositFlow: React.FC = () => {
     setError('');
 
     try {
-      // Create transaction to send SOL to the anonymity pool
-      const poolAddress = new PublicKey('FragmentedPaymentsV111111111111111111111111'); // This would be the actual pool PDA
-      const lamports = amountSol * LAMPORTS_PER_SOL;
+      const lamports = Math.floor(amountSol * LAMPORTS_PER_SOL);
       const fee = calculateFee(amountSol);
-      const totalLamports = (amountSol + fee) * LAMPORTS_PER_SOL;
+      const totalLamports = Math.floor((amountSol + fee) * LAMPORTS_PER_SOL);
 
+      // For now, send SOL directly to a temporary address
+      // TODO: Replace with actual smart contract interaction when deployed
+      const tempPoolAddress = new PublicKey('11111111111111111111111111111112'); // System program ID as placeholder
+      
       const transaction = new Transaction().add(
         SystemProgram.transfer({
           fromPubkey: publicKey,
-          toPubkey: poolAddress,
+          toPubkey: tempPoolAddress,
           lamports: totalLamports,
         })
       );
