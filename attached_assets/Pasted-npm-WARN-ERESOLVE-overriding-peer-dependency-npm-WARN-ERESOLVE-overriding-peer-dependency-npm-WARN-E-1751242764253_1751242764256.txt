@@ -1,0 +1,544 @@
+npm WARN ERESOLVE overriding peer dependency
+npm WARN ERESOLVE overriding peer dependency
+npm WARN ERESOLVE overriding peer dependency
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-numbers@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/kit@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/sysvars@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/accounts@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/addresses@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/functional@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/instructions@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/keys@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/programs@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/rpc@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/rpc-parsed-types@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/rpc-spec-types@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/rpc-subscriptions@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/rpc-types@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/signers@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/transaction-confirmation@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/transaction-messages@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/transactions@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-core@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-strings@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/rpc-spec@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/assertions@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-core@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-strings@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/nominal-types@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-core@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-core@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-strings@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/fast-stable-stringify@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/rpc-api@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/rpc-transformers@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/rpc-transport-http@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-core@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-strings@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/promises@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/rpc-subscriptions-api@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/rpc-subscriptions-channel-websocket@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/rpc-subscriptions-spec@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/subscribable@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-core@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-numbers@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-strings@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-core@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-strings@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-core@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-data-structures@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-numbers@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-core@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-data-structures@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-numbers@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-strings@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-numbers@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-numbers@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-numbers@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-core@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-data-structures@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-numbers@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-strings@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/options@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-numbers@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-core@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-data-structures@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-numbers@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-strings@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/options@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-core@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-numbers@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/codecs-core@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@solana/errors@2.1.1',
+npm WARN EBADENGINE   required: { node: '>=20.18.0' },
+npm WARN EBADENGINE   current: { node: 'v20.12.2', npm: '10.5.0' }
+npm WARN EBADENGINE }
+npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm WARN deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+npm WARN deprecated lodash.isequal@4.5.0: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
+npm WARN deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm WARN deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm WARN deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+npm WARN deprecated uuidv4@6.2.13: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+npm WARN deprecated @toruslabs/solana-embed@2.1.0: This sdk is now deprecated. Please use @web3auth/ws-embed instead
+npm WARN deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+npm ERR! code 1
+npm ERR! path /home/runner/workspace/node_modules/usb
+npm ERR! command failed
+npm ERR! command sh -c node-gyp-build
+npm ERR! make: Entering directory '/home/runner/workspace/node_modules/usb/build'
+npm ERR!   CC(target) Release/obj.target/libusb/libusb/libusb/core.o
+npm ERR!   CC(target) Release/obj.target/libusb/libusb/libusb/descriptor.o
+npm ERR!   CC(target) Release/obj.target/libusb/libusb/libusb/hotplug.o
+npm ERR!   CC(target) Release/obj.target/libusb/libusb/libusb/io.o
+npm ERR!   CC(target) Release/obj.target/libusb/libusb/libusb/strerror.o
+npm ERR!   CC(target) Release/obj.target/libusb/libusb/libusb/sync.o
+npm ERR!   CC(target) Release/obj.target/libusb/libusb/libusb/os/events_posix.o
+npm ERR!   CC(target) Release/obj.target/libusb/libusb/libusb/os/threads_posix.o
+npm ERR!   CC(target) Release/obj.target/libusb/libusb/libusb/os/linux_usbfs.o
+npm ERR!   CC(target) Release/obj.target/libusb/libusb/libusb/os/linux_udev.o
+npm ERR! make: Leaving directory '/home/runner/workspace/node_modules/usb/build'
+npm ERR! gyp info it worked if it ends with ok
+npm ERR! gyp info using node-gyp@10.0.1
+npm ERR! gyp info using node@20.12.2 | linux | x64
+npm ERR! gyp info find Python using Python version 3.11.9 found at "/nix/store/7hnr99nxrd2aw6lghybqdmkckq60j6l9-python3-3.11.9/bin/python3"
+npm ERR! gyp http GET https://nodejs.org/download/release/v20.12.2/node-v20.12.2-headers.tar.gz
+npm ERR! gyp http 200 https://nodejs.org/download/release/v20.12.2/node-v20.12.2-headers.tar.gz
+npm ERR! gyp http GET https://nodejs.org/download/release/v20.12.2/SHASUMS256.txt
+npm ERR! gyp http 200 https://nodejs.org/download/release/v20.12.2/SHASUMS256.txt
+npm ERR! gyp info spawn /nix/store/7hnr99nxrd2aw6lghybqdmkckq60j6l9-python3-3.11.9/bin/python3
+npm ERR! gyp info spawn args [
+npm ERR! gyp info spawn args '/nix/store/6g9n96qf1yx139xklnmy3v4xhjvjgsji-nodejs-20.12.2/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py',
+npm ERR! gyp info spawn args 'binding.gyp',
+npm ERR! gyp info spawn args '-f',
+npm ERR! gyp info spawn args 'make',
+npm ERR! gyp info spawn args '-I',
+npm ERR! gyp info spawn args '/home/runner/workspace/node_modules/usb/build/config.gypi',
+npm ERR! gyp info spawn args '-I',
+npm ERR! gyp info spawn args '/nix/store/6g9n96qf1yx139xklnmy3v4xhjvjgsji-nodejs-20.12.2/lib/node_modules/npm/node_modules/node-gyp/addon.gypi',
+npm ERR! gyp info spawn args '-I',
+npm ERR! gyp info spawn args '/home/runner/workspace/.cache/node-gyp/20.12.2/include/node/common.gypi',
+npm ERR! gyp info spawn args '-Dlibrary=shared_library',
+npm ERR! gyp info spawn args '-Dvisibility=default',
+npm ERR! gyp info spawn args '-Dnode_root_dir=/home/runner/workspace/.cache/node-gyp/20.12.2',
+npm ERR! gyp info spawn args '-Dnode_gyp_dir=/nix/store/6g9n96qf1yx139xklnmy3v4xhjvjgsji-nodejs-20.12.2/lib/node_modules/npm/node_modules/node-gyp',
+npm ERR! gyp info spawn args '-Dnode_lib_file=/home/runner/workspace/.cache/node-gyp/20.12.2/<(target_arch)/node.lib',
+npm ERR! gyp info spawn args '-Dmodule_root_dir=/home/runner/workspace/node_modules/usb',
+npm ERR! gyp info spawn args '-Dnode_engine=v8',
+npm ERR! gyp info spawn args '--depth=.',
+npm ERR! gyp info spawn args '--no-parallel',
+npm ERR! gyp info spawn args '--generator-output',
+npm ERR! gyp info spawn args 'build',
+npm ERR! gyp info spawn args '-Goutput_dir=.'
+npm ERR! gyp info spawn args ]
+npm ERR! gyp info spawn make
+npm ERR! gyp info spawn args [ 'BUILDTYPE=Release', '-C', 'build' ]
+npm ERR! ../libusb/libusb/os/linux_udev.c:28:10: fatal error: libudev.h: No such file or directory
+npm ERR!    28 | #include <libudev.h>
+npm ERR!       |          ^~~~~~~~~~~
+npm ERR! compilation terminated.
+npm ERR! make: *** [libusb.target.mk:149: Release/obj.target/libusb/libusb/libusb/os/linux_udev.o] Error 1
+npm ERR! gyp ERR! build error 
+npm ERR! gyp ERR! stack Error: `make` failed with exit code: 2
+npm ERR! gyp ERR! stack at ChildProcess.<anonymous> (/nix/store/6g9n96qf1yx139xklnmy3v4xhjvjgsji-nodejs-20.12.2/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:209:23)
+npm ERR! gyp ERR! System Linux 6.2.16
+npm ERR! gyp ERR! command "/nix/store/6g9n96qf1yx139xklnmy3v4xhjvjgsji-nodejs-20.12.2/bin/node" "/nix/store/6g9n96qf1yx139xklnmy3v4xhjvjgsji-nodejs-20.12.2/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+npm ERR! gyp ERR! cwd /home/runner/workspace/node_modules/usb
+npm ERR! gyp ERR! node -v v20.12.2
+npm ERR! gyp ERR! node-gyp -v v10.0.1
+npm ERR! gyp ERR! not ok
+
+npm ERR! A complete log of this run can be found in: /home/runner/.npm/_logs/2025-06-30T00_10_18_805Z-debug-0.log
