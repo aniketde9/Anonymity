@@ -3,6 +3,8 @@ import CryptoJS from 'crypto-js'
 import nacl from 'tweetnacl'
 import bs58 from 'bs58'
 
+const API_BASE_URL = 'http://localhost:5000/api'
+
 /**
  * Generate a cryptographically secure secret note
  */
@@ -47,4 +49,93 @@ export function generateCommitment(secretNote: string, nullifier: string): strin
   const combined = secretNote + nullifier
   const hash = CryptoJS.SHA256(combined)
   return hash.toString(CryptoJS.enc.Hex)
+}
+
+/**
+ * API functions for backend communication
+ */
+export async function prepareDeposit(secretNote: string, depositAmount: number) {
+  const response = await fetch(`${API_BASE_URL}/deposit/prepare`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      secretNote,
+      depositAmount
+    })
+  })
+  
+  if (!response.ok) {
+    throw new Error('Failed to prepare deposit')
+  }
+  
+  return response.json()
+}
+
+export async function commitDeposit(commitment: string, signature: string) {
+  const response = await fetch(`${API_BASE_URL}/deposit/commit`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      commitment,
+      signature
+    })
+  })
+  
+  if (!response.ok) {
+    throw new Error('Failed to commit deposit')
+  }
+  
+  return response.json()
+}
+
+export async function prepareWithdraw(secretNote: string, recipientAddress: string) {
+  const response = await fetch(`${API_BASE_URL}/withdraw/prepare`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      secretNote,
+      recipientAddress
+    })
+  })
+  
+  if (!response.ok) {
+    throw new Error('Failed to prepare withdrawal')
+  }
+  
+  return response.json()
+}
+
+export async function executeWithdraw(secretNote: string, signature: string) {
+  const response = await fetch(`${API_BASE_URL}/withdraw/execute`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      secretNote,
+      signature
+    })
+  })
+  
+  if (!response.ok) {
+    throw new Error('Failed to execute withdrawal')
+  }
+  
+  return response.json()
+}
+
+export async function getPoolStats() {
+  const response = await fetch(`${API_BASE_URL}/pool/stats`)
+  
+  if (!response.ok) {
+    throw new Error('Failed to fetch pool stats')
+  }
+  
+  return response.json()
 }

@@ -17,3 +17,29 @@ args = "npm install"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "npm run dev"
+
+[[workflows.workflow]]
+name = "Start Backend"
+author = 44379893
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd backend && npm install && npm run dev"
+
+[[workflows.workflow]]
+name = "Deploy Program"
+author = 44379893
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "anchor build"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "anchor deploy --provider.cluster devnet"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "ts-node scripts/deploy.ts"
