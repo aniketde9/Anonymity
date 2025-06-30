@@ -10,7 +10,7 @@ const idl = JSON.parse(fs.readFileSync('./target/idl/anonymity_pool.json', 'utf8
 
 async function main() {
   // Configure the client to use devnet
-  const connection = new Connection('https://api.devnet.solana.com', 'confirmed');
+  const connection = new Connection('https://devnet.helius-rpc.com/?api-key=a1c96ec7-818b-4789-ad2c-2bd175df4a95', 'confirmed');
   
   // Load wallet
   const wallet = anchor.Wallet.local();

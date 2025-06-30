@@ -3,7 +3,7 @@ import CryptoJS from 'crypto-js'
 import nacl from 'tweetnacl'
 import bs58 from 'bs58'
 
-const API_BASE_URL = 'http://localhost:5000/api'
+const API_BASE_URL = 'http://0.0.0.0:5000/api'
 
 /**
  * Generate a cryptographically secure secret note

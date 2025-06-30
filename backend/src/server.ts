@@ -1,4 +1,3 @@
-
 import express from 'express';
 import cors from 'cors';
 import { Connection, PublicKey, Keypair, Transaction, sendAndConfirmTransaction } from '@solana/web3.js';
@@ -15,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 // Solana connection
-const connection = new Connection('https://api.devnet.solana.com', 'confirmed');
+const connection = new Connection('https://devnet.helius-rpc.com/?api-key=a1c96ec7-818b-4789-ad2c-2bd175df4a95', 'confirmed');
 const programId = new PublicKey('AnonymityV2PoolProgram11111111111111111111');
 
 // Pool configuration
@@ -259,6 +258,7 @@ app.get('/health', (req, res) => {
 });
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Anonymity V2 Backend running on port ${PORT}`);
-  console.log(`Connected to Solana devnet: ${connection.rpcEndpoint}`);
+  console.log(`Anonymity V2 Backend running on http://0.0.0.0:${PORT}`);
+  console.log(`Connected to Solana devnet via Helius RPC`);
+  console.log(`API endpoints available at /api/*`);
 });
