@@ -1,0 +1,23 @@
+
+{
+  "scripts": {
+    "setup": "chmod +x install.sh && ./install.sh",
+    "dev:frontend": "vite",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:full": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build": "tsc && vite build",
+    "build:backend": "cd backend && npm run build",
+    "build:all": "npm run build:backend && npm run build",
+    "preview": "vite preview",
+    "anchor:build": "anchor build",
+    "anchor:deploy": "anchor deploy --provider.cluster devnet",
+    "anchor:test": "anchor test",
+    "deploy:program": "npm run anchor:build && npm run anchor:deploy && npx ts-node scripts/deploy.ts",
+    "start:production": "npm run build:all && concurrently \"cd backend && npm start\" \"npm run preview\"",
+    "clean": "rm -rf dist node_modules backend/dist backend/node_modules",
+    "install:all": "npm install && cd backend && npm install",
+    "wallet:airdrop": "solana airdrop 2 --url devnet",
+    "wallet:balance": "solana balance --url devnet",
+    "config:devnet": "solana config set --url devnet"
+  }
+}
