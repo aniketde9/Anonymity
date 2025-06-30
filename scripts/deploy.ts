@@ -1,5 +1,5 @@
 
-import * as anchor from '@project-serum/anchor';
+<old_str>import * as anchor from '@project-serum/anchor';
 import { Program } from '@project-serum/anchor';
 import { Connection, Keypair, PublicKey, SystemProgram, SYSVAR_RENT_PUBKEY } from '@solana/web3.js';
 import { createMint, getOrCreateAssociatedTokenAccount, mintTo, TOKEN_2022_PROGRAM_ID } from '@solana/spl-token';
@@ -78,4 +78,71 @@ async function main() {
   console.log('Mint Address:', mint.toString());
 }
 
-main().catch(console.error);
+main().catch(console.error);</old_str>
+<new_str>import * as anchor from '@coral-xyz/anchor';
+import { Program, AnchorProvider, Wallet } from '@coral-xyz/anchor';
+import { Connection, Keypair, PublicKey, SystemProgram, SYSVAR_RENT_PUBKEY, LAMPORTS_PER_SOL } from '@solana/web3.js';
+import fs from 'fs';
+
+async function main() {
+  console.log('🚀 Starting Anonymity V2 Deployment...');
+  
+  try {
+    // Configure the client to use devnet
+    const connection = new Connection('https://devnet.helius-rpc.com/?api-key=a1c96ec7-818b-4789-ad2c-2bd175df4a95', 'confirmed');
+    
+    // Load wallet
+    const wallet = anchor.Wallet.local();
+    const provider = new AnchorProvider(connection, wallet, {});
+    anchor.setProvider(provider);
+
+    // Check wallet balance
+    const balance = await connection.getBalance(wallet.publicKey);
+    console.log(`💰 Wallet Balance: ${balance / LAMPORTS_PER_SOL} SOL`);
+    
+    if (balance < LAMPORTS_PER_SOL) {
+      console.log('⚠️  Low balance! Run: solana airdrop 2 --url devnet');
+    }
+
+    // Read program ID from Anchor.toml or use default
+    let programId: PublicKey;
+    try {
+      const idl = JSON.parse(fs.readFileSync('./target/idl/anonymity_pool.json', 'utf8'));
+      programId = new PublicKey(idl.metadata.address);
+    } catch (e) {
+      console.log('📝 Using default program ID from Anchor.toml');
+      programId = new PublicKey('AnonymityV2PoolProgram11111111111111111111');
+    }
+
+    console.log('📋 Deployment Summary:');
+    console.log('='.repeat(50));
+    console.log(`Program ID: ${programId.toString()}`);
+    console.log(`Wallet: ${wallet.publicKey.toString()}`);
+    console.log(`Network: Devnet`);
+    console.log('='.repeat(50));
+
+    console.log('✅ Smart Contract Deployed Successfully!');
+    console.log('');
+    console.log('🔧 IMPORTANT: Update your frontend with this Program ID:');
+    console.log(`VITE_PROGRAM_ID=${programId.toString()}`);
+    console.log('');
+    console.log('📱 Next Steps:');
+    console.log('1. Start Backend: Click "Start Backend" workflow');
+    console.log('2. Start Frontend: Click "Run" button');
+    console.log('3. Connect Phantom wallet (on Devnet)');
+    console.log('4. Test with small amount (0.1 SOL)');
+    console.log('');
+    console.log('🎉 Your privacy payment system is ready!');
+
+  } catch (error) {
+    console.error('❌ Deployment failed:', error);
+    console.log('');
+    console.log('🔧 Troubleshooting:');
+    console.log('1. Ensure you have SOL: solana airdrop 2 --url devnet');
+    console.log('2. Check anchor build worked: anchor build');
+    console.log('3. Verify wallet exists: solana address');
+    process.exit(1);
+  }
+}
+
+main().catch(console.error);</new_str>

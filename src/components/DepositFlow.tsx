@@ -63,14 +63,19 @@ const DepositFlow: React.FC = () => {
       const fee = calculateFee(amountSol);
       const totalLamports = Math.floor((amountSol + fee) * LAMPORTS_PER_SOL);
 
-      // For now, send SOL directly to a temporary address
-      // TODO: Replace with actual smart contract interaction when deployed
-      const tempPoolAddress = new PublicKey('11111111111111111111111111111112'); // System program ID as placeholder
+      // Use the deployed program ID from environment
+      const programId = new PublicKey(import.meta.env.VITE_PROGRAM_ID || 'AnonymityV2PoolProgram11111111111111111111');
+      
+      // For devnet testing, we'll send to the program's derived address
+      const [poolPda] = PublicKey.findProgramAddressSync(
+        [Buffer.from('pool'), Buffer.from('fragmented_payments')],
+        programId
+      );
       
       const transaction = new Transaction().add(
         SystemProgram.transfer({
           fromPubkey: publicKey,
-          toPubkey: tempPoolAddress,
+          toPubkey: poolPda,
           lamports: totalLamports,
         })
       );

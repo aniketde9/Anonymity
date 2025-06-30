@@ -1,4 +1,3 @@
-
 # Anonymity V2 - Fragmented Payments Pool
 
 A privacy-focused payment system on Solana that breaks payments into random fragments delivered over time, making it computationally difficult to trace the connection between sender and recipient.
@@ -16,133 +15,81 @@ A privacy-focused payment system on Solana that breaks payments into random frag
 3. **Time-Delayed Delivery**: These fragments are sent to your specified recipient over your chosen timeframe
 4. **Privacy Through Volume**: Your payment gets lost in the noise of all other fragmented payments
 
-## ✨ Key Features
+## 🚀 COMPLETE DEPLOYMENT GUIDE (Non-Technical)
 
-- **🎯 Direct to Recipient**: No secret notes - just specify their address
-- **🧩 Smart Fragmentation**: Intelligent random splitting of payments
-- **⏰ Flexible Timing**: Choose Fast (1hr), Standard (6hr), or Slow (24hr) delivery
-- **🔄 Fire & Forget**: Completely automated - recipient doesn't need to do anything
-- **🔒 High Privacy**: Breaks value, timing, and wallet correlations
+### Step 1: Setup Your Wallet
+1. Install [Phantom Wallet](https://phantom.app/) browser extension
+2. Create a new wallet (save your seed phrase safely!)
+3. Click the settings gear in Phantom → Change Network → **Switch to Devnet**
+4. Copy your wallet address (click your wallet name to copy)
 
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Node.js v18 or higher
-- Solana CLI tools
-- Anchor Framework
-- Phantom or Solflare wallet
-
-### Option 1: One-Command Setup
+### Step 2: Get Test SOL
+Run this command in the Shell (bottom of screen):
 ```bash
-chmod +x install.sh && ./install.sh
+solana airdrop 2 YOUR_WALLET_ADDRESS --url devnet
 ```
+Replace `YOUR_WALLET_ADDRESS` with your actual wallet address from Phantom.
 
-### Option 2: Manual Setup
+### Step 3: Deploy the Smart Contract
+1. Click **"Deploy Program"** workflow (in the dropdown next to Run)
+2. Wait for all 3 steps to complete (takes 2-3 minutes)
+3. Look for the final output that shows **Program ID** - copy this address!
 
-1. **Clone and Install**:
-   ```bash
-   git clone <repository-url>
-   cd anonymity-v2
-   npm install
-   cd backend && npm install && cd ..
-   ```
+### Step 4: Update Frontend Configuration
+After deployment completes, you'll see output like:
+```
+Program ID: ABC123...XYZ
+```
+Copy that Program ID and replace it in the code.
 
-2. **Configure Environment**:
-   ```bash
-   cp .env.example .env
-   cp backend/.env.example backend/.env
-   # Edit .env files with your settings
-   ```
+### Step 5: Start the Backend Server
+1. Click **"Start Backend"** workflow 
+2. Wait until you see "Server running on port 5000"
 
-3. **Set Up Solana**:
-   ```bash
-   solana config set --url devnet
-   solana airdrop 2  # Get test SOL
-   ```
+### Step 6: Start the Frontend
+1. Click the **Run** button (starts frontend)
+2. Open the web preview (should show at top)
+3. Connect your Phantom wallet
 
-4. **Deploy Smart Contract**:
-   ```bash
-   anchor build
-   anchor deploy --provider.cluster devnet
-   ```
+### Step 7: Test the System
+1. Enter a recipient address
+2. Enter amount (start with 0.1 SOL for testing)
+3. Choose delivery speed
+4. Click "Send Private Payment"
+5. Confirm transaction in Phantom
 
-5. **Start the Application**:
-   ```bash
-   # Start backend scheduler
-   cd backend && npm run dev &
-   
-   # Start frontend
-   npm run dev
-   ```
+**That's it! Your private payment system is now live on Solana Devnet!**
 
-## 🏗️ Architecture
+---
 
-### Smart Contract (`programs/anonymity-pool/`)
-- **Rust/Anchor** program on Solana
-- Manages payment schedules and fund custody
-- Validates fragmented payment instructions
+## 🛠️ Technical Details (For Developers)
 
-### Backend Scheduler (`backend/`)
-- **Node.js/TypeScript** service
-- Orchestrates fragmented payments
-- Implements randomization algorithms
+### Architecture
 
-### Frontend (`src/`)
-- **React/TypeScript** interface
-- Wallet integration via Solana Wallet Adapter
-- Real-time payment tracking
-
-## 📡 API Endpoints
-
-### Backend API (http://localhost:5000)
-
-- `POST /api/schedule-payment` - Schedule a new fragmented payment
-- `GET /api/schedule/:scheduleId` - Get payment schedule status  
-- `GET /api/pool-stats` - Get anonymity pool statistics
-- `GET /health` - Service health check
-
-## 🎮 Usage Guide
-
-### Sending a Private Payment
-
-1. Connect your Solana wallet (Phantom/Solflare)
-2. Go to "Send Payment" tab
-3. Enter recipient's Solana address
-4. Specify amount in SOL
-5. Choose delivery speed (affects privacy level)
-6. Click "Send Private Payment"
-7. Confirm the transaction
-
-### Tracking Incoming Payments
-
-1. Go to "Track Payments" tab
-2. Enter the receiving wallet address
-3. View active payment schedules and progress
-4. Monitor fragmented delivery in real-time
-
-## ⚙️ Configuration
+- **Smart Contract**: Rust/Anchor program on Solana devnet
+- **Backend**: Node.js scheduler service on port 5000  
+- **Frontend**: React app with Solana wallet integration
 
 ### Environment Variables
 
-**Frontend** (`.env`):
+Create `.env` file:
 ```bash
-VITE_SOLANA_RPC_URL=https://devnet.helius-rpc.com/?api-key=YOUR_KEY
-VITE_BACKEND_URL=http://localhost:5000
+VITE_SOLANA_RPC_URL=https://devnet.helius-rpc.com/?api-key=a1c96ec7-818b-4789-ad2c-2bd175df4a95
+VITE_PROGRAM_ID=YOUR_DEPLOYED_PROGRAM_ID
 ```
 
-**Backend** (`backend/.env`):
+Create `backend/.env` file:
 ```bash
 PORT=5000
-SOLANA_RPC_URL=https://devnet.helius-rpc.com/?api-key=YOUR_KEY
-SCHEDULER_PRIVATE_KEY=base58_encoded_keypair
+SOLANA_RPC_URL=https://devnet.helius-rpc.com/?api-key=a1c96ec7-818b-4789-ad2c-2bd175df4a95
+SCHEDULER_PRIVATE_KEY=YOUR_KEYPAIR_BASE58
 ```
 
-### Delivery Speed Options
+### Available Workflows
 
-- **Fast (1 hour)**: 1-10 minute intervals, higher anonymity risk
-- **Standard (6 hours)**: 5-30 minute intervals, balanced approach  
-- **Slow (24 hours)**: 15-60 minute intervals, maximum privacy
+- **Dev Server**: Starts frontend only
+- **Start Backend**: Starts Node.js scheduler service
+- **Deploy Program**: Builds and deploys smart contract to devnet
 
 ## 🔒 Security Features
 
@@ -150,73 +97,76 @@ SCHEDULER_PRIVATE_KEY=base58_encoded_keypair
 - **Timing Obfuscation**: Payments spread over time
 - **Pool Mixing**: High-volume transactions provide cover
 - **Non-Custodial**: Automated system with no human intervention
-- **Configurable Privacy**: Choose your privacy/speed tradeoff
 
-## ⚠️ Security Warnings
+## ⚠️ Important Notes
 
-1. **Experimental Software**: Use at your own risk
-2. **Devnet Only**: Currently configured for Solana Devnet only
-3. **Privacy Limitations**: Anonymity set size affects privacy strength
-4. **No Mainnet**: Do not use on mainnet without proper security audits
-5. **Backup Important**: Always backup wallet private keys
+1. **Devnet Only**: This is configured for Solana Devnet (test network)
+2. **Test SOL**: Use `solana airdrop 2 <address> --url devnet` for test funds
+3. **Save Addresses**: Keep your Program ID and wallet addresses safe
+4. **Experimental**: Use at your own risk, this is experimental software
 
-## 🛠️ Development
+## 🎮 Usage Guide
 
-### Available Scripts
+### Sending a Private Payment
 
+1. **Connect Wallet**: Click "Connect" and select Phantom
+2. **Enter Details**: 
+   - Recipient's Solana address
+   - Amount in SOL
+   - Delivery speed (Fast/Standard/Slow)
+3. **Send**: Click "Send Private Payment"
+4. **Confirm**: Approve transaction in Phantom wallet
+5. **Track**: Your payment will be automatically fragmented and delivered
+
+### Tracking Payments
+
+1. Go to "Track Payments" tab
+2. Enter wallet address to monitor
+3. View active payment schedules
+4. See real-time fragmented delivery progress
+
+## 🚨 Troubleshooting
+
+### Common Issues:
+
+**"Transaction failed"**
+- Ensure wallet is on Devnet
+- Check you have enough SOL for transaction + fees
+- Refresh page and try again
+
+**"Program not found"**
+- Run "Deploy Program" workflow first
+- Update Program ID in frontend code
+- Restart frontend with Run button
+
+**"Backend connection failed"**
+- Start "Start Backend" workflow
+- Check port 5000 is available
+- Look for "Server running" message
+
+**"Wallet won't connect"**
+- Refresh page
+- Switch Phantom to Devnet
+- Clear browser cache
+
+### Getting More Test SOL
 ```bash
-# Development
-npm run dev              # Start frontend
-npm run dev:backend      # Start backend only
-npm run dev:full         # Start both frontend and backend
-
-# Building
-npm run build            # Build frontend
-npm run build:backend    # Build backend
-npm run build:all        # Build everything
-
-# Solana/Anchor
-npm run anchor:build     # Build smart contract
-npm run anchor:deploy    # Deploy to devnet
-npm run deploy:program   # Build, deploy, and initialize
-
-# Utilities
-npm run wallet:airdrop   # Get devnet SOL
-npm run wallet:balance   # Check wallet balance
-npm run config:devnet    # Set Solana CLI to devnet
+solana airdrop 2 <your-address> --url devnet
 ```
 
-### Project Structure
-
-```
-├── programs/anonymity-pool/    # Solana smart contract
-├── backend/                    # Node.js scheduler service
-├── src/                       # React frontend
-├── scripts/                   # Deployment scripts
-├── install.sh                 # One-command setup
-└── README.md                  # This file
+### Check Your Balance
+```bash
+solana balance <your-address> --url devnet
 ```
 
-## 🎯 Use Cases
+## 📞 Support
 
-- **Freelancer Payments**: Pay contractors without revealing your main wallet
-- **Private Gifts**: Send anonymous gifts to friends or family
-- **Online Purchases**: Buy services while maintaining financial privacy
-- **Wallet Funding**: Fund other wallets without creating transaction links
+If you encounter issues:
+1. Check the troubleshooting section above
+2. Look at browser console for error messages
+3. Ensure all steps were followed in order
+4. Try with a smaller test amount first (0.1 SOL)
 
-## 🤝 Contributing
+---
 
-1. Fork the repository
-2. Create a feature branch
-3. Test thoroughly on devnet
-4. Submit a pull request
-
-## 📜 License
-
-MIT License - see LICENSE file for details
-
-## 🚨 Disclaimer
-
-This software is experimental and provided "as is". The developers are not responsible for any loss of funds or other damages. Always test on devnet first and never use on mainnet without proper security audits.
-
-The privacy guarantees depend on the size of the anonymity set and the behavior of other users. Larger pools and more diverse transaction patterns provide better privacy protection.
+**Ready to use private payments on Solana! 🚀**
