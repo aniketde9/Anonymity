@@ -1,218 +1,222 @@
 
-# Anonymity V2 - Solana Privacy Pool
+# Anonymity V2 - Fragmented Payments Pool
 
-A decentralized privacy pool on Solana that breaks the on-chain link between your source and destination addresses using Token-2022 Confidential Transfers and zero-knowledge proofs.
+A privacy-focused payment system on Solana that breaks payments into random fragments delivered over time, making it computationally difficult to trace the connection between sender and recipient.
 
-## Features
+## 🎯 What It Does
 
-- 🔒 **Private Deposits**: Break transaction links using cryptographic commitments
-- 🌳 **Merkle Tree Privacy**: Uses Merkle trees for anonymous withdrawal proofs
-- 🔐 **Zero-Knowledge Proofs**: Verify ownership without revealing identity
-- 💰 **Multiple Denominations**: Support for 0.1, 1, 10, and 100 SOL pools
-- 🌐 **Modern UI**: Clean React interface with Phantom wallet integration
-- ⚡ **Solana Devnet**: Built for Solana's high-performance blockchain
+**The Problem**: Direct A→B payments on Solana are public and easily traceable.
 
-## Architecture
+**The Solution**: Send your payment to our smart contract pool, specify the recipient, and we automatically deliver the funds in random fragments over time. This breaks both value and timing correlations that blockchain analysts use to trace transactions.
 
-- **Frontend**: React + TypeScript + Vite
-- **Backend**: Node.js + Express API for ZK proof generation
-- **Smart Contract**: Anchor program deployed on Solana Devnet
-- **Privacy**: Poseidon hash + Merkle trees + ZK proofs
+## 🔄 How It Works
 
-## Quick Start
+1. **Send to Pool**: You send the full amount (e.g., 10 SOL) to our anonymity pool in one transaction
+2. **Automatic Fragmentation**: Our system breaks it into random amounts (e.g., 0.21 SOL, 1.43 SOL, 0.08 SOL...)  
+3. **Time-Delayed Delivery**: These fragments are sent to your specified recipient over your chosen timeframe
+4. **Privacy Through Volume**: Your payment gets lost in the noise of all other fragmented payments
+
+## ✨ Key Features
+
+- **🎯 Direct to Recipient**: No secret notes - just specify their address
+- **🧩 Smart Fragmentation**: Intelligent random splitting of payments
+- **⏰ Flexible Timing**: Choose Fast (1hr), Standard (6hr), or Slow (24hr) delivery
+- **🔄 Fire & Forget**: Completely automated - recipient doesn't need to do anything
+- **🔒 High Privacy**: Breaks value, timing, and wallet correlations
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
-- Node.js (v18 or higher)
-- Phantom Wallet browser extension
-- Git
+- Node.js v18 or higher
+- Solana CLI tools
+- Anchor Framework
+- Phantom or Solflare wallet
 
-### 1. Clone and Install
-
+### Option 1: One-Command Setup
 ```bash
-git clone <your-repo-url>
-cd anonymity-v2
-npm install
+chmod +x install.sh && ./install.sh
 ```
 
-### 2. Install Backend Dependencies
+### Option 2: Manual Setup
 
+1. **Clone and Install**:
+   ```bash
+   git clone <repository-url>
+   cd anonymity-v2
+   npm install
+   cd backend && npm install && cd ..
+   ```
+
+2. **Configure Environment**:
+   ```bash
+   cp .env.example .env
+   cp backend/.env.example backend/.env
+   # Edit .env files with your settings
+   ```
+
+3. **Set Up Solana**:
+   ```bash
+   solana config set --url devnet
+   solana airdrop 2  # Get test SOL
+   ```
+
+4. **Deploy Smart Contract**:
+   ```bash
+   anchor build
+   anchor deploy --provider.cluster devnet
+   ```
+
+5. **Start the Application**:
+   ```bash
+   # Start backend scheduler
+   cd backend && npm run dev &
+   
+   # Start frontend
+   npm run dev
+   ```
+
+## 🏗️ Architecture
+
+### Smart Contract (`programs/anonymity-pool/`)
+- **Rust/Anchor** program on Solana
+- Manages payment schedules and fund custody
+- Validates fragmented payment instructions
+
+### Backend Scheduler (`backend/`)
+- **Node.js/TypeScript** service
+- Orchestrates fragmented payments
+- Implements randomization algorithms
+
+### Frontend (`src/`)
+- **React/TypeScript** interface
+- Wallet integration via Solana Wallet Adapter
+- Real-time payment tracking
+
+## 📡 API Endpoints
+
+### Backend API (http://localhost:5000)
+
+- `POST /api/schedule-payment` - Schedule a new fragmented payment
+- `GET /api/schedule/:scheduleId` - Get payment schedule status  
+- `GET /api/pool-stats` - Get anonymity pool statistics
+- `GET /health` - Service health check
+
+## 🎮 Usage Guide
+
+### Sending a Private Payment
+
+1. Connect your Solana wallet (Phantom/Solflare)
+2. Go to "Send Payment" tab
+3. Enter recipient's Solana address
+4. Specify amount in SOL
+5. Choose delivery speed (affects privacy level)
+6. Click "Send Private Payment"
+7. Confirm the transaction
+
+### Tracking Incoming Payments
+
+1. Go to "Track Payments" tab
+2. Enter the receiving wallet address
+3. View active payment schedules and progress
+4. Monitor fragmented delivery in real-time
+
+## ⚙️ Configuration
+
+### Environment Variables
+
+**Frontend** (`.env`):
 ```bash
-cd backend
-npm install
-cd ..
+VITE_SOLANA_RPC_URL=https://devnet.helius-rpc.com/?api-key=YOUR_KEY
+VITE_BACKEND_URL=http://localhost:5000
 ```
 
-### 3. Install Solana CLI (Optional - for development)
-
+**Backend** (`backend/.env`):
 ```bash
-sh -c "$(curl -sSfL https://release.solana.com/v1.18.4/install)"
-export PATH="/home/runner/.local/share/solana/install/active_release/bin:$PATH"
+PORT=5000
+SOLANA_RPC_URL=https://devnet.helius-rpc.com/?api-key=YOUR_KEY
+SCHEDULER_PRIVATE_KEY=base58_encoded_keypair
 ```
 
-### 4. Install Anchor Framework (Optional - for smart contract development)
+### Delivery Speed Options
+
+- **Fast (1 hour)**: 1-10 minute intervals, higher anonymity risk
+- **Standard (6 hours)**: 5-30 minute intervals, balanced approach  
+- **Slow (24 hours)**: 15-60 minute intervals, maximum privacy
+
+## 🔒 Security Features
+
+- **Value Obfuscation**: Original amounts hidden through fragmentation
+- **Timing Obfuscation**: Payments spread over time
+- **Pool Mixing**: High-volume transactions provide cover
+- **Non-Custodial**: Automated system with no human intervention
+- **Configurable Privacy**: Choose your privacy/speed tradeoff
+
+## ⚠️ Security Warnings
+
+1. **Experimental Software**: Use at your own risk
+2. **Devnet Only**: Currently configured for Solana Devnet only
+3. **Privacy Limitations**: Anonymity set size affects privacy strength
+4. **No Mainnet**: Do not use on mainnet without proper security audits
+5. **Backup Important**: Always backup wallet private keys
+
+## 🛠️ Development
+
+### Available Scripts
 
 ```bash
-npm install -g @coral-xyz/anchor-cli
+# Development
+npm run dev              # Start frontend
+npm run dev:backend      # Start backend only
+npm run dev:full         # Start both frontend and backend
+
+# Building
+npm run build            # Build frontend
+npm run build:backend    # Build backend
+npm run build:all        # Build everything
+
+# Solana/Anchor
+npm run anchor:build     # Build smart contract
+npm run anchor:deploy    # Deploy to devnet
+npm run deploy:program   # Build, deploy, and initialize
+
+# Utilities
+npm run wallet:airdrop   # Get devnet SOL
+npm run wallet:balance   # Check wallet balance
+npm run config:devnet    # Set Solana CLI to devnet
 ```
-
-### 5. Start the Application
-
-#### Option A: Quick Start (Frontend Only)
-```bash
-npm run dev
-```
-The frontend will be available at `http://localhost:5173`
-
-#### Option B: Full Stack (Frontend + Backend)
-```bash
-# Terminal 1 - Start Backend
-cd backend
-npm run dev
-
-# Terminal 2 - Start Frontend
-npm run dev
-```
-
-## Usage
-
-### 1. Connect Wallet
-- Install Phantom wallet extension
-- Create or import a Solana wallet
-- Ensure you're on Solana Devnet
-- Connect your wallet to the application
-
-### 2. Get Devnet SOL
-```bash
-# Get some devnet SOL for testing
-solana airdrop 2 <your-wallet-address> --url devnet
-```
-
-### 3. Make a Private Deposit
-- Choose deposit amount (0.1, 1, 10, or 100 SOL)
-- Generate a secret note (keep this safe!)
-- Confirm the transaction
-- Wait for confirmation
-
-### 4. Anonymous Withdrawal
-- Enter your secret note from the deposit
-- Specify recipient address (can be different from deposit address)
-- Generate zero-knowledge proof
-- Withdraw anonymously
-
-## Development
 
 ### Project Structure
 
 ```
-anonymity-v2/
-├── src/                    # Frontend React app
-│   ├── components/         # React components
-│   ├── utils/             # Crypto utilities
-│   └── types.ts           # TypeScript types
-├── backend/               # Express API server
-│   ├── src/
-│   │   ├── utils/         # ZK proof & Merkle tree utilities
-│   │   └── server.ts      # Main server file
-├── programs/              # Anchor smart contracts
-│   └── anonymity-pool/    # Main privacy pool program
-├── scripts/               # Deployment scripts
-└── package.json
+├── programs/anonymity-pool/    # Solana smart contract
+├── backend/                    # Node.js scheduler service
+├── src/                       # React frontend
+├── scripts/                   # Deployment scripts
+├── install.sh                 # One-command setup
+└── README.md                  # This file
 ```
 
-### Smart Contract Development
+## 🎯 Use Cases
 
-#### Build the Program
-```bash
-anchor build
-```
+- **Freelancer Payments**: Pay contractors without revealing your main wallet
+- **Private Gifts**: Send anonymous gifts to friends or family
+- **Online Purchases**: Buy services while maintaining financial privacy
+- **Wallet Funding**: Fund other wallets without creating transaction links
 
-#### Deploy to Devnet
-```bash
-anchor deploy --provider.cluster devnet
-```
-
-#### Run Deployment Script
-```bash
-npx ts-node scripts/deploy.ts
-```
-
-### Environment Variables
-
-Create `.env` files if needed:
-
-**Frontend (.env)**
-```
-VITE_SOLANA_RPC_URL=https://devnet.helius-rpc.com/?api-key=a1c96ec7-818b-4789-ad2c-2bd175df4a95
-VITE_PROGRAM_ID=AnonymityV2PoolProgram11111111111111111111
-```
-
-**Backend (.env)**
-```
-PORT=5000
-SOLANA_RPC_URL=https://devnet.helius-rpc.com/?api-key=a1c96ec7-818b-4789-ad2c-2bd175df4a95
-```
-
-## Security Warnings
-
-⚠️ **IMPORTANT SECURITY NOTICES**
-
-1. **Experimental Software**: This is experimental software. Use at your own risk.
-2. **Devnet Only**: Currently configured for Solana Devnet only.
-3. **Backup Secret Notes**: Always backup your secret notes securely. Loss = permanent loss of funds.
-4. **No Mainnet**: Do not use on Solana Mainnet without proper security audits.
-5. **Privacy Limitations**: Anonymity set size affects privacy. Larger sets = better privacy.
-
-## API Endpoints
-
-### Backend API (http://localhost:5000)
-
-- `POST /api/generate-proof` - Generate ZK withdrawal proof
-- `GET /api/merkle-tree/:poolId` - Get Merkle tree state
-- `POST /api/commitment` - Add new commitment to tree
-- `GET /api/pool-stats` - Get pool statistics
-
-## Troubleshooting
-
-### Common Issues
-
-1. **Wallet Connection Issues**
-   - Ensure Phantom wallet is installed and unlocked
-   - Switch to Solana Devnet in wallet settings
-
-2. **RPC Issues**
-   - The Helius RPC endpoint is configured for devnet
-   - If rate limited, get your own API key from helius.xyz
-
-3. **Transaction Failures**
-   - Ensure sufficient SOL for gas fees
-   - Check if program is deployed correctly
-   - Verify you're on the correct network (devnet)
-
-4. **Installation Issues**
-   - Use Node.js v18 or higher
-   - Clear npm cache: `npm cache clean --force`
-   - Delete node_modules and reinstall
-
-### Getting Help
-
-1. Check browser developer console for errors
-2. Verify wallet is connected and on devnet
-3. Ensure backend is running if using full stack mode
-4. Check Solana RPC endpoint status
-
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch
-3. Make your changes
-4. Test thoroughly on devnet
-5. Submit a pull request
+3. Test thoroughly on devnet
+4. Submit a pull request
 
-## License
+## 📜 License
 
 MIT License - see LICENSE file for details
 
-## Disclaimer
+## 🚨 Disclaimer
 
-This software is provided "as is" without warranty. Use at your own risk. The developers are not responsible for any loss of funds or other damages. This is experimental software and should not be used with real funds on mainnet without proper security audits.
+This software is experimental and provided "as is". The developers are not responsible for any loss of funds or other damages. Always test on devnet first and never use on mainnet without proper security audits.
+
+The privacy guarantees depend on the size of the anonymity set and the behavior of other users. Larger pools and more diverse transaction patterns provide better privacy protection.
